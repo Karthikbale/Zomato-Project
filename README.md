@@ -25,3 +25,4 @@ In this **DevOps project**, I demonstrate how to **deploy a ZOMATO Clone App** u
 ---
 
 
+This project is customized, maintained, and deployed by **Karthikbale**.
