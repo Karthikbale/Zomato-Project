@@ -148,7 +148,35 @@ Copied that 16-character password
 Pasted it into Jenkins Credentials (username + password)
 
 12. System Configuration in Jenkins
+Extended E-mail Notification
+SMTP server
+smtp.gmail.com
+SMTP Port
+465
+Advanced >credetials>karthikbale2002@gmail.com
+use ssl  useOAuth2.0
 
+E-mail Notification
+SMTP server
+smtp.gmail.com
+Use SMTP Authentication
+?
+User Name
+karthikbale2002@gmail.com
+Password
+paste that copied password from google email acnt
+Use SSL
+Smtp port
+465
+Reply-To Address
+karthikbale2002@gmail.com
+Charset
+UTF-8
+Test configuration by sending test e-mail
+Test e-mail recipient
+karthikbale2002@gmail.com
+Test configuration
+Email was successfully sent
 
 13. Create webhook in SonarQube
 go to admisntration click on organization >webhook>create . Here give jenkins name and url and add /sonarqube-webhook/    at last of url   no secret key just save it.
