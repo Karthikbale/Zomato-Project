@@ -84,7 +84,7 @@ root@ip-172-31-18-216:/home/ubuntu# sh install-scout.sh
 $ docker run -d --name sonar -p 9000:9000 sonarqube:lts-community
 $ docker ps (You can see SonarQube container)
 
-<Follow the process as explained in the video>
+
 
 10. Installation of Plugins in Jenkins
 Install below plugins:
