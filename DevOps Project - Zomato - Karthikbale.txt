@@ -140,17 +140,11 @@ ID:docker     ]
 
 11.3 Configuration of Email notification in Jenkins
 As soon as the build happens, i need to get an email notification to do that we have to configure our email.
-
 Logged into Google Account
-
-Clicked Profile Picture → Manage your Google Account
-
+cicked Profile Picture → Manage your Google Account
 Used Search bar → typed “App passwords”
-
 Created an App Password
-
 Copied that 16-character password
-
 Pasted it into Jenkins Credentials (username + password)
 
 12. System Configuration in Jenkins
@@ -185,7 +179,7 @@ pipeline {
         }
         stage ("Git Checkout") {
             steps {
-                git 'https://github.com/KastroVKiran/Zomato-Project-Kastro.git'
+                git 'https://github.com/Karthikbale/Zomato-Project.git'
             }
         }
         stage("Sonarqube Analysis"){
@@ -199,7 +193,7 @@ pipeline {
         stage("Code Quality Gate"){
            steps {
                 script {
-                    waitForQualityGate abortPipeline: false, credentialsId: 'Sonar-token' 
+                    waitForQualityGate abortPipeline: false, credentialsId: 'Sonar-Token' 
                 }
             } 
         }
@@ -228,8 +222,8 @@ pipeline {
             steps {
                 script {
                     withDockerRegistry(credentialsId: 'docker') {
-                        sh "docker tag zomato kastrov/zomato:latest "
-                        sh "docker push kastrov/zomato:latest "
+                        sh "docker tag zomato karthikbale/zomato:latest "
+                        sh "docker push karthikbale/zomato:latest "
                     }
                 }
             }
@@ -238,16 +232,16 @@ pipeline {
             steps {
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){
-                       sh 'docker-scout quickview kastrov/zomato:latest'
-                       sh 'docker-scout cves kastrov/zomato:latest'
-                       sh 'docker-scout recommendations kastrov/zomato:latest'
+                       sh 'docker-scout quickview karthikbale/zomato:latest'
+                       sh 'docker-scout cves karthikbale/zomato:latest'
+                       sh 'docker-scout recommendations karthikbale/zomato:latest'
                    }
                 }
             }
         }
         stage ("Deploy to Container") {
             steps {
-                sh 'docker run -d --name zomato -p 3000:3000 kastrov/zomato:latest'
+                sh 'docker run -d --name zomato -p 3000:3000 karthikbale/zomato:latest'
             }
         }
     }
@@ -270,7 +264,7 @@ pipeline {
                 </body>
                 </html>
             """,
-            to: 'kastrokiran@gmail.com',
+            to: 'karthikbale2002@gmail.com',
             mimeType: 'text/html',
             attachmentsPattern: 'trivy.txt'
         }
