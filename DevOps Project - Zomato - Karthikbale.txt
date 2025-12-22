@@ -134,8 +134,8 @@ Sonar-Token        as a name ]
 Lets create another credentials for DockerHub. This is being done because, as soon as the docker image is created, it should get pushed to dockerhub. 
 [
 username with password 
-dockerhub username :karthikbale
-password :Karthik@2002
+dockerhub username :karthikbale2002@gmail.com
+password :dockerhub personal access token pasted 
 ID:docker     ]
 
 11.3 Configuration of Email notification in Jenkins
