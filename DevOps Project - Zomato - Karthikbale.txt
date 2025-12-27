@@ -575,8 +575,8 @@ Note 2: Run the VS Code Editor/Power Shell/Command Prompt as Administrator, to a
 
 Open vs code editor and execute the below commands; 
 Step 01: Create EKS Cluster using eksctl
-# Create Cluster. I will keep the cluster name as "kastrocluster"
-eksctl create cluster --name=kastrocluster \
+# Create Cluster. I will keep the cluster name as "karthik"
+eksctl create cluster --name=karthik \
                       --region=ap-northeast-1 \
                       --zones=ap-northeast-1a,ap-northeast-1c \
                       --without-nodegroup                  
@@ -587,12 +587,12 @@ To resolve this issue, you can either write the entire command on a single line 
 
 Approach 1: Single Line Command (In this video i will prefer this)
 Simply run the entire command in one line without using backslashes for line continuation:
-eksctl create cluster --name=kastrocluster --region=ap-northeast-1 --zones=ap-northeast-1a,ap-northeast-1c --without-nodegroup
+eksctl create cluster --name=karthik --region=ap-northeast-1 --zones=ap-northeast-1a,ap-northeast-1c --without-nodegroup
 
 
 Approach 2: Use PowerShell’s Backtick for Line Continuation
 If you want to split the command across multiple lines, you can use the backtick character (`) in PowerShell for line continuation:
-eksctl create cluster --name=kastrocluster `
+eksctl create cluster --name=karthik `
                       --region=ap-northeast-1 `
                       --zones=ap-northeast-1a,ap-northeast-1c `
                       --without-nodegroup
@@ -602,7 +602,7 @@ Note: Make sure there is no space after the backtick.
 It will take atleast 20-25 minutes for the cluster to create.
 
 To verify the cluster creation ---> Goto Cloud Formation service in AWS ----> You should see a stack got created with the name "kastrocluster". Make sure in the vs code editor the cluster will get created. As said earlier it will take atleast 20 minutes.
-Once the cluster is ready, you will see "EKS Cluster "kastrocluster" in "us-east-1" region is ready" in vs code editor. wait till you see this.
+Once the cluster is ready, you will see "EKS Cluster "karthikcluster" in "us-east-1" region is ready" in vs code editor. wait till you see this.
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 # Get List of clusters
 eksctl get cluster
@@ -622,23 +622,23 @@ eksctl utils associate-iam-oidc-provider \
 # Replace with region & cluster name
 eksctl utils associate-iam-oidc-provider \
     --region ap-northeast-1 \
-    --cluster kastrocluster \
+    --cluster karthik \
     --approve
 
 (OR)
-eksctl utils associate-iam-oidc-provider --region ap-northeast-1 --cluster kastrocluster --approve
+eksctl utils associate-iam-oidc-provider --region ap-northeast-1 --cluster karthik --approve
 
 (OR)
 eksctl utils associate-iam-oidc-provider `
     --region uap-northeast-1 `
-    --cluster kastrocluster `
+    --cluster karthik `
     --approve
 
 Step 03: Create Node Group with additional Add-Ons in Public Subnets
 These add-ons will create the respective IAM policies for us automatically within our Node Group role.
 
 # Create Public Node Group   
-eksctl create nodegroup --cluster=kastrocluster \
+eksctl create nodegroup --cluster=karthik \
                        --region=ap-northeast-1 \
                        --name=kastrodemo-ng-public1 \
                        --node-type=t3.medium \
@@ -656,12 +656,12 @@ eksctl create nodegroup --cluster=kastrocluster \
                        --alb-ingress-access
 
 (OR)
-eksctl create nodegroup --cluster=kastrocluster --region=ap-northeast-1 --name=kastrodemo-ng-public1 --node-type=t3.medium --nodes=2 --nodes-min=2 --nodes-max=4 --node-volume-size=20 --ssh-access --ssh-public-key=Prajwal --managed --asg-access --external-dns-access --full-ecr-access --appmesh-access --alb-ingress-access
+eksctl create nodegroup --cluster=karthik --region=ap-northeast-1 --name=karthikdemo-ng-public1 --node-type=t3.medium --nodes=2 --nodes-min=2 --nodes-max=4 --node-volume-size=20 --ssh-access --ssh-public-key=Prajwal --managed --asg-access --external-dns-access --full-ecr-access --appmesh-access --alb-ingress-access
 
 (OR)
-eksctl create nodegroup --cluster=kastrocluster `
+eksctl create nodegroup --cluster=karthik `
     --region=ap-northeast-1 `
-    --name=kastrodemo-ng-public1 `
+    --name=karthikdemo-ng-public1 `
     --node-type=t3.medium `
     --nodes=2 `
     --nodes-min=2 `
@@ -688,16 +688,16 @@ eksctl get clusters
 
 # Capture Node Group name
 eksctl get nodegroup --cluster=<clusterName>
-eksctl get nodegroup --cluster=kastrocluster
+eksctl get nodegroup --cluster=karthik
 
 # Delete Node Group
 eksctl delete nodegroup --cluster=<clusterName> --name=<nodegroupName>
-eksctl delete nodegroup --cluster=kastrocluster --name=kastrodemo-ng-public1
+eksctl delete nodegroup --cluster=karthik --name=karthikdemo-ng-public1
 
 Step 07: Delete Cluster
 # Delete Cluster
 eksctl delete cluster <clusterName>
-eksctl delete cluster kastrocluster
+eksctl delete cluster karthikcluster
 ********************************************************************************
 ********************************************************************************
 Let us deploy the same application in the EKS cluster also
