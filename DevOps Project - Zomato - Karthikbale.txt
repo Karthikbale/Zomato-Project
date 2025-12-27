@@ -549,6 +549,22 @@ select node exporter full copy as clipboard
 ad paste in it and import  . select dasboard prometheus and save it 
 Click on Dashboards in the left pane, you can see both the dashboards you have just added.
 
+so i added elastic ip . for better use 
+create elatic ip add to monitoring server .and add in  cd /etc/prometheus  and sudo vi prometheus.yml
+monitoring ip<<<<Give ElasticIP at nodeport and prometheus too .
+
+- job_name: "node_exporter"
+  static_configs:
+    - targets: ["<ELASTIC-IP>:9100"]
+
+- job_name: "prometheus"
+  static_configs:
+    - targets: ["<ELASTIC-IP>:9090"]
+
+save exit . then in putty as a out of promethues directory 
+sudo systemctl restart prometheus
+open  Prometheus in browser with port number 
+open grafana in browser with port number edit data source cleanly add dashboard connections .
 ---------------------------------------------
 Creation of EKS cluster
 ---------------------------------------------
