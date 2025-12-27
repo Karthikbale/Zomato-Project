@@ -640,14 +640,14 @@ These add-ons will create the respective IAM policies for us automatically withi
 # Create Public Node Group   
 eksctl create nodegroup --cluster=karthik \
                        --region=ap-northeast-1 \
-                       --name=kastrodemo-ng-public1 \
+                       --name=karthikdemo-ng-public1 \
                        --node-type=t3.medium \
                        --nodes=2 \
                        --nodes-min=2 \
                        --nodes-max=4 \
                        --node-volume-size=20 \
                        --ssh-access \
-                       --ssh-public-key=Prajwal \
+                       --ssh-public-key=Zomato \
                        --managed \
                        --asg-access \
                        --external-dns-access \
@@ -656,7 +656,7 @@ eksctl create nodegroup --cluster=karthik \
                        --alb-ingress-access
 
 (OR)
-eksctl create nodegroup --cluster=karthik --region=ap-northeast-1 --name=karthikdemo-ng-public1 --node-type=t3.medium --nodes=2 --nodes-min=2 --nodes-max=4 --node-volume-size=20 --ssh-access --ssh-public-key=Prajwal --managed --asg-access --external-dns-access --full-ecr-access --appmesh-access --alb-ingress-access
+eksctl create nodegroup --cluster=karthik --region=ap-northeast-1 --name=karthikdemo-ng-public1 --node-type=t3.medium --nodes=2 --nodes-min=2 --nodes-max=4 --node-volume-size=20 --ssh-access --ssh-public-key=Zomato --managed --asg-access --external-dns-access --full-ecr-access --appmesh-access --alb-ingress-access
 
 (OR)
 eksctl create nodegroup --cluster=karthik `
@@ -668,7 +668,7 @@ eksctl create nodegroup --cluster=karthik `
     --nodes-max=4 `
     --node-volume-size=20 `
     --ssh-access `
-    --ssh-public-key=Prajwal `
+    --ssh-public-key=Zomato `
     --managed `
     --asg-access `
     --external-dns-access `
