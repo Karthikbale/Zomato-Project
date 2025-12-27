@@ -473,6 +473,7 @@ curl -X POST http://localhost:9090/-/reload
 Access Prometheus in browser (if already opened, just reload the page):
 http://<your-prometheus-ip>:9090/targets
 
+Add inbound rule in monitoring server and add 9100 port number custom tcp ipv4 
 Open Port number 9100 for Monitoring VM 
 
 You should now see "Jenkins (1/1 up)" "node exporter (1/1 up)" and "prometheus (1/1 up)" in the prometheus browser.
