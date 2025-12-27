@@ -533,9 +533,20 @@ You will see the Grafana dashboard
 
 The first thing that we have to do in Grafana is to add the data source
 Lets add the data source;
+Add Prometheus as Data Source
+Go to Configuration → Data Sources
+Click Add data source
+Select Prometheus
+Enter Prometheus URL: http://<Monitoring ip>:9090
+Click Save & Test
+Ensure data source connection is successful
+ Then open dashboard 
+select + add import 
+go to website at there and open it select jenkins perofomance copy as clipboard 
+ad paste in it and import  . select dasboard prometheus and save it 
 
-<Follow the process as explained in the video>
-
+select node exporter full copy as clipboard 
+ad paste in it and import  . select dasboard prometheus and save it 
 Click on Dashboards in the left pane, you can see both the dashboards you have just added.
 
 ---------------------------------------------
