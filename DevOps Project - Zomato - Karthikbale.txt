@@ -787,7 +787,19 @@ echo $env:ARGO_PWD
 
 You will see the password. copy and paste it in the argo cd homepage --->login
 
+Give the proper details in  Manaage your repositorys <click Repositorys>  connect repo using https  then click git then project name default then url of repo  then click on connect on top bar .
 
+***Click on < Manage your application health > 
+Click New App in ArgoCD UI.
+Enter App Name (e.g., ZOMATO) and select Project: default.
+Set Repository URL: https://github.com/Karthikbale/Zomato-Project.git.
+Set Target Revision: HEAD (default branch).
+Set Path: Kubernetes (folder in repo containing manifests).
+Select Cluster: in-cluster and Namespace: default.
+Enable Automated Sync if desired (optional: check “Prune Resources” and “Self Heal”).
+Click Create to add the application.
+Wait for ArgoCD to Sync and show Healthy status.
+Verify Images and Resources are deployed correctly.***
 
 Note: In the repo, in Kubernetes folder, in the deployment.yml file, in the containers section change the dockerhub username
 
