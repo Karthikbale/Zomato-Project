@@ -677,7 +677,9 @@ eksctl create nodegroup --cluster=karthik `
     --alb-ingress-access
 
 Step 05: Verify Cluster & Nodes
-Goto EKS Service in AWS and check for the cluster creation
+Goto EKS Service in AWS and check for the cluster creation 
+open your cluster go to compute check the node there or go to ec2 in tokyo region you can see there also .
+
 
 ******************************************
 Optional - do it at the end of complete demo
@@ -702,7 +704,7 @@ eksctl delete cluster karthikcluster
 ********************************************************************************
 Let us deploy the same application in the EKS cluster also
 
-<Follow the process as explained in the video>
+
 
 ------------------------------------------------------------
 15.6: Argo CD installation
@@ -739,7 +741,9 @@ Used to monitor Kubernetes cluster.
 Additionally, you'll install the node exporter using Helm to collect metrics from your cluster nodes.
 
 Install Node Exporter using Helm
-To begin monitoring your Kubernetes cluster, you'll install the Prometheus Node Exporter. This component allows you to collect system-level metrics from your cluster nodes. Here are the steps to install the Node Exporter using Helm:
+To begin monitoring your Kubernetes cluster, you'll install the Prometheus Node Exporter. This component allows you to collect system-level metrics from your cluster nodes. Here are the steps to install the Node 
+
+Exporter using Helm:
 
 Add the Prometheus Community Helm repository:
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
@@ -776,12 +780,14 @@ $env:ARGO_PWD = (kubectl -n argocd get secret argocd-initial-admin-secret -o jso
 To see the password;
 echo $ARGO_PWD
 
+Nsu8PF7fBumNBU0c     Password
+
 Execute the below command in powershell, if the command doesn't get executed in VS Code Editor
 echo $env:ARGO_PWD
 
 You will see the password. copy and paste it in the argo cd homepage --->login
 
-<Follow the process as explained in the video>
+
 
 Note: In the repo, in Kubernetes folder, in the deployment.yml file, in the containers section change the dockerhub username
 
